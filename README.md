@@ -41,26 +41,26 @@ You can use the uploaded checkpoints or train from scratch.
 
 # Stage-1
 # Fill in the following paths in graphgpt_stage1.sh to conduct stage-1
-model_path=./GraphGPT-main/vicuna-7b-v1.5-16k
-instruct_ds=./GraphGPT-main/data/stage_1/graph_matching.json
-graph_data_path=./GraphGPT-main/graph_data/All_pyg_graph_data/all_graph_data.pt
+model_path=./lorec-gpt/vicuna-7b-v1.5-16k
+instruct_ds=./lorec-gpt/data/stage_1/graph_matching.json
+graph_data_path=./lorec-gpt/graph_data/All_pyg_graph_data/all_graph_data.pt
 pretra_gnn=clip_gt_arxiv
-output_model=./GraphGPT-main/checkpoints/stage_1/arxivpub
+output_model=./lorec-gpt/checkpoints/stage_1/arxivpub
 
 # running stage-1
-bash ./GraphGPT-main/scripts/tune_script/graphgpt_stage1.sh
+bash ./lorec-gpt/scripts/tune_script/graphgpt_stage1.sh
 
 # Stage-2
 # Fill in the following paths in graphgpt_stage2.sh to conduct stage-2
-model_path=./GraphGPT-main/vicuna-7b-v1.5-16k
-instruct_ds=./GraphGPT-main/data/stage_2/arxiv_pub_node_st_cot_link_mix.json
-graph_data_path=./GraphGPT-main/graph_data/All_pyg_graph_data/all_graph_data.pt
+model_path=./lorec-gpt/vicuna-7b-v1.5-16k
+instruct_ds=./lorec-gpt/data/stage_2/arxiv_pub_node_st_cot_link_mix.json
+graph_data_path=./lorec-gpt/graph_data/All_pyg_graph_data/all_graph_data.pt
 pretra_gnn=clip_gt_arxiv
-tuned_proj=./GraphGPT-main/checkpoints/stage_1/arxivpub/graph_projector.bin
-output_model=./GraphGPT-main/checkpoints/stage_2/arxivpub_arxiv
+tuned_proj=./lorec-gpt/checkpoints/stage_1/arxivpub/graph_projector.bin
+output_model=./lorec-gpt/checkpoints/stage_2/arxivpub_arxiv
 
 # running stage-2
-bash ./GraphGPT-main/scripts/tune_script/graphgpt_stage2.sh
+bash ./lorec-gpt/scripts/tune_script/graphgpt_stage2.sh
 ```
 ### 3. Evaluation
 ```
@@ -74,16 +74,16 @@ end_id=20000
 log_dir=path-to-logs
 
 # An example is as follows:
-output_model=/gemini/code/LoReC/GraphGPT-main/checkpoints/stage_2/arxivpub
-datapath=/gemini/code/LoReC/GraphGPT-main/graph_data/eval/arxiv_test_instruct_cot.json
-graph_data_path=/gemini/LoReC/code/GraphGPT-main/graph_data/All_pyg_graph_data/all_graph_data.pt
-res_path=/gemini/code/LoReC/GraphGPT-main/eval_output/arxivpub_arxiv_test
+output_model=/gemini/code/LoReC/lorec-gpt/checkpoints/stage_2/arxivpub
+datapath=/gemini/code/LoReC/lorec-gpt/graph_data/eval/arxiv_test_instruct_cot.json
+graph_data_path=/gemini/LoReC/code/lorec-gpt/graph_data/All_pyg_graph_data/all_graph_data.pt
+res_path=/gemini/code/LoReC/lorec-gpt/eval_output/arxivpub_arxiv_test
 start_id=0
 end_id=20000
-log_dir=/gemini/code/LoReC/GraphGPT-main/logs
+log_dir=/gemini/code/LoReC/lorec-gpt/logs
 
 # running eval
-bash ./GraphGPT-main/scripts/eval_script/graphgpt_eval.sh
+bash ./lorec-gpt/scripts/eval_script/graphgpt_eval.sh
 ```
 ### 4. Calculate metrics
 ```
@@ -93,9 +93,9 @@ graph_data = th.load('path-to-all_graph_data.pt')['arxiv']
 df = pd.read_csv('path-to-labelidx2arxivcategeory.csv')
 
 # An example is as follows:
-folder = '/gemini/code/LoReC/GraphGPT-main/eval_output/arxivpub_arxiv_test/arxivpub_arxiv_test_alpha0.5_beta1.0_drop0.2_edge10'
-graph_data = th.load('/gemini/code/LoReC/GraphGPT-main/graph_data/All_pyg_graph_data/all_graph_data.pt')['arxiv']
-df = pd.read_csv('/gemini/code/LoReC/GraphGPT-main/calculate_metric/labelidx2arxivcategeory.csv')
+folder = '/gemini/code/LoReC/lorec-gpt/eval_output/arxivpub_arxiv_test/arxivpub_arxiv_test_alpha0.5_beta1.0_drop0.2_edge10'
+graph_data = th.load('/gemini/code/LoReC/lorec-gpt/graph_data/All_pyg_graph_data/all_graph_data.pt')['arxiv']
+df = pd.read_csv('/gemini/code/LoReC/lorec-gpt/calculate_metric/labelidx2arxivcategeory.csv')
 
 # running calculation
 python path-to-cal_metric_arxiv.py
