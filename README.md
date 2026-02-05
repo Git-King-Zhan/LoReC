@@ -5,29 +5,17 @@ LoReC (Look, Remember, Contrast) is a a novel decoding method that comprehensive
 - LoReC significantly enhances GraphLLM models' perception and comprehension of graph data.
 - LoReC is a plug-and-play solution without extra training or fine-tuning, enabling seamless integration with existing GraphLLM models.
 
-## :briefcase: Preparation for usage
-```
-# Get all the used datasets from the huggingface links given.
+## :briefcase: Dataset & Model Resources
 
-# All instruction dataset for evaluation. Put in /lorec-gpt/graph_data/eval.
-[eval](https://huggingface.co/datasets/Jiabin99/GraphGPT-eval-instruction)
+| Resource | Destination Path | Download Link |
+| :--- | :--- | :--- |
+| **Evaluation Dataset** | `/lorec-gpt/graph_data/eval` | [eval](https://huggingface.co/datasets/Jiabin99/GraphGPT-eval-instruction) |
+| **All Graph Data** | `/lorec-gpt/graph_data/All_pyg_graph_data` | [All_pyg_graph_data](https://huggingface.co/datasets/Jiabin99/All_pyg_graph_data) |
+| **Stage-1 Data** | `/lorec-gpt/data/stage_1/graph_matching` | [stage_1](https://huggingface.co/datasets/Jiabin99/graph-matching) |
+| **Stage-2 Data** | `/lorec-gpt/data/stage_2` | [stage_2](https://huggingface.co/datasets/Jiabin99/Arxiv-PubMed-mix-NC-LP) |
+| **Pre-trained GT Checkpoint** | `/lorec-gpt/clip_gt_arxiv`<br>`/lorec-gpt/pretrained_gnn/clip_gt_arxiv` | [clip_gt_arxiv](https://huggingface.co/Jiabin99/Arxiv-PubMed-GraphCLIP-GT) |
+| **Vicuna-7b-v1.5-16k** | `/lorec-gpt/vicuna-7b-v1.5-16k` | [Vicuna-7b-v1.5-16k](https://huggingface.co/lmsys/vicuna-7b-v1.5-16k) |
 
-# All utilized graph data. Put in /lorec-gpt/graph_data/All_pyg_graph_data.
-[All_pyg_graph_data](https://huggingface.co/datasets/Jiabin99/All_pyg_graph_data)
-
-# Data for stage-1. Put in /lorec-gpt/data/stage_1/graph_matching.
-[stage_1](https://huggingface.co/datasets/Jiabin99/graph-matching)
-
-# Data for stage-2. Put in /lorec-gpt/data/stage_2.
-[stage_2](https://huggingface.co/datasets/Jiabin99/Arxiv-PubMed-mix-NC-LP)
-
-# Checkpoint of the pre-trained graph transformer (GT) trained on Arxiv and PubMed using Text-Graph grounding. Put in /lorec-gpt/clip_gt_arxiv & /lorec-gpt/pretrained_gnn/clip_gt_arxiv.
-[clip_gt_arxiv](https://huggingface.co/Jiabin99/Arxiv-PubMed-GraphCLIP-GT)
-
-# Weights of Vicuna-7b-v1.5-16k. Put in /lorec-gpt/vicuna-7b-v1.5-16k.
-[Vicuna-7b-v1.5-16k](https://huggingface.co/lmsys/vicuna-7b-v1.5-16k)
-
-```
 ## :pushpin: Usage
 ### 1. Enviroment
 You can install the required enviroment by running the following command:
