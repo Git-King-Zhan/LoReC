@@ -1,5 +1,5 @@
 # LoReC: Rethinking Large Language Models for Graph Data Analysis
-![LoReC](assets/framework.png)
+![LoReC](lorec-gpt/assets/framework.png)
 ## :books: Overview
 LoReC (Look, Remember, Contrast) is a a novel decoding method that comprehensively enhances LLMs’ understanding of graph data without extra fine-tuning. The contributions are as follows:
 - LoReC significantly enhances GraphLLM models' perception and comprehension of graph data.
