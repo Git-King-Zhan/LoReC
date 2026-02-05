@@ -5,15 +5,27 @@ LoReC (Look, Remember, Contrast) is a a novel decoding method that comprehensive
 - LoReC significantly enhances GraphLLM models' perception and comprehension of graph data.
 - LoReC is a plug-and-play solution without extra training or fine-tuning, enabling seamless integration with existing GraphLLM models.
 
-## :briefcase: Datasets
+## :briefcase: Preparation for usage
 ```
 # Get all the used datasets from the huggingface links given.
 
-# All instruction dataset for evaluation.
+# All instruction dataset for evaluation. Put in /lorec-gpt/graph_data/eval.
 [eval](https://huggingface.co/datasets/Jiabin99/GraphGPT-eval-instruction)
 
-# All utilized graph data.
+# All utilized graph data. Put in /lorec-gpt/graph_data/All_pyg_graph_data.
 [All_pyg_graph_data](https://huggingface.co/datasets/Jiabin99/All_pyg_graph_data)
+
+# Data for stage-1. Put in /lorec-gpt/data/stage_1/graph_matching.
+[stage_1](https://huggingface.co/datasets/Jiabin99/graph-matching)
+
+# Data for stage-2. Put in /lorec-gpt/data/stage_2.
+[stage_2](https://huggingface.co/datasets/Jiabin99/Arxiv-PubMed-mix-NC-LP)
+
+# Checkpoint of the pre-trained graph transformer (GT) trained on Arxiv and PubMed using Text-Graph grounding. Put in /lorec-gpt/clip_gt_arxiv & /lorec-gpt/pretrained_gnn/clip_gt_arxiv.
+[clip_gt_arxiv](https://huggingface.co/Jiabin99/Arxiv-PubMed-GraphCLIP-GT)
+
+# Weights of Vicuna-7b-v1.5-16k. Put in /lorec-gpt/vicuna-7b-v1.5-16k.
+[Vicuna-7b-v1.5-16k](https://huggingface.co/lmsys/vicuna-7b-v1.5-16k)
 
 ```
 ## :pushpin: Usage
@@ -88,7 +100,7 @@ bash ./lorec-gpt/scripts/eval_script/graphgpt_eval.sh
 ### 4. Calculate metrics
 ```
 # Fill in the following paths in cal_metric_arxiv.py to calculate metrics
-folder = 'path-to-evaloutput json files'
+folder = 'path-to-eval_output.json files'
 graph_data = th.load('path-to-all_graph_data.pt')['arxiv']
 df = pd.read_csv('path-to-labelidx2arxivcategeory.csv')
 
