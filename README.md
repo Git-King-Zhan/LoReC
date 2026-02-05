@@ -16,6 +16,11 @@ LoReC (Look, Remember, Contrast) is a a novel decoding method that comprehensive
 | **Pre-trained GT Checkpoint** | `/lorec-gpt/clip_gt_arxiv`<br>`/lorec-gpt/pretrained_gnn/clip_gt_arxiv` | [clip_gt_arxiv](https://huggingface.co/Jiabin99/Arxiv-PubMed-GraphCLIP-GT) |
 | **Vicuna-7b-v1.5-16k** | `/lorec-gpt/vicuna-7b-v1.5-16k` | [Vicuna-7b-v1.5-16k](https://huggingface.co/lmsys/vicuna-7b-v1.5-16k) |
 
+Note that pre-trained gt checkpoint should be written in the config file of vicuna-7b-v1.5-16k:
+```
+"pretrain_graph_model_path": "path-to-clip_gt_arxiv_pub.pkl"
+```
+
 ## :pushpin: Usage
 ### 1. Enviroment
 You can install the required enviroment by running the following command:
