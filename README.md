@@ -1,3 +1,4 @@
+![Project Logo](assets/lorec_logo.svg)
 <div align="center">
 
 # LoReC: Rethinking Large Language Models for Graph Data Analysis
