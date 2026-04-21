@@ -1,9 +1,57 @@
+<div align="center">
+
 # LoReC: Rethinking Large Language Models for Graph Data Analysis
-![LoReC](lorec-gpt/assets/framework.png)
+
+**Hongyu Zhan<sup>1</sup>, Qixin Wang<sup>2</sup>, Yusen Tan<sup>1</sup>, Haitao Yu<sup>1</sup>, Jingbo Zhou<sup>3</sup>** <br>
+**Shuai Chen<sup>4</sup>, Jia Li<sup>1</sup>, Xiao Tan<sup>4,†</sup>, Jun Xia<sup>1,5,†</sup>** <br>
+<sup>1</sup> The Hong Kong University of Science and Technology (Guangzhou)  
+<sup>2</sup> Tongji University, <sup>3</sup> Westlake University, <sup>4</sup> Ant Group  
+<sup>5</sup> The Hong Kong University of Science and Technology <br>
+<sup>†</sup> Corresponding authors.
+<div align="center">
+
+<table style="border-collapse: collapse; border: none;">
+  <tr style="border: none;">
+    <td style="border: none; padding: 0 5px;">
+      <a href="https://arxiv.org/abs/2604.17897" target="_blank">
+        <img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=flat&logo=arxiv&logoColor=white" alt="Paper arXiv">
+      </a>
+    </td>
+    <td style="border: none; padding: 0 5px;">
+      <a href="https://www.python.org/" target="_blank">
+        <img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white" alt="Python 3.10+">
+      </a>
+    </td>
+    <td style="border: none; padding: 0 5px;">
+      <a href="https://github.com/Git-King-Zhan/LoReC" target="_blank">
+        <img src="https://img.shields.io/badge/Code-GitHub-181717.svg?logo=github&logoColor=white" alt="Code GitHub">
+      </a>
+    </td>
+</table>
+
+</div>
+
+---
+
+</div>
+
+## News
+* [2026/04/21]: LoReC is now available on [arxiv](https://arxiv.org/abs/2604.17897)
+
+## Table of Contents
+
+* [Overview](#books-overview)
+* [Dataset & Model Resources](#briefcase-dataset--model-resources)
+* [Usage](#pushpin-usage)
+* [Acknowledgement](#acknowledgement)
+* [Citation](#citation)
+
 ## :books: Overview
 LoReC (Look, Remember, Contrast) is a a novel decoding method that comprehensively enhances LLMs’ understanding of graph data without extra fine-tuning. The contributions are as follows:
 - LoReC significantly enhances GraphLLM models' perception and comprehension of graph data.
 - LoReC is a plug-and-play solution without extra training or fine-tuning, enabling seamless integration with existing GraphLLM models.
+
+![LoReC](lorec-gpt/assets/framework.png)
 
 ## :briefcase: Dataset & Model Resources
 
@@ -106,9 +154,21 @@ df = pd.read_csv('/gemini/code/LoReC/lorec-gpt/calculate_metric/labelidx2arxivca
 python path-to-cal_metric_arxiv.py
 ```
 
+## Acknowledgement
+The codebase is built upon [GraphGPT](https://github.com/HKUDS/GraphGPT) and [GraphPrompter](https://github.com/franciscoliu/graphprompter). We express our gratitude to these open-source projects.
 
-
-
+## Citation
+```bibtex
+@misc{zhan2026lorecrethinkinglargelanguage,
+      title={LoReC: Rethinking Large Language Models for Graph Data Analysis}, 
+      author={Hongyu Zhan and Qixin Wang and Yusen Tan and Haitao Yu and Jingbo Zhou and Shuai Chen and Jia Li and Xiao Tan and Jun Xia},
+      year={2026},
+      eprint={2604.17897},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2604.17897}, 
+}
+```
 
 
 
