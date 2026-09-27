@@ -37,7 +37,8 @@
 </div>
 
 ## News
-* [2026/04/21]: LoReC is now available on [arxiv](https://arxiv.org/abs/2604.17897)
+* [2026/04/21]: :beers: LoReC is now available on [arxiv](https://arxiv.org/abs/2604.17897)
+* [2026/9/25]: :tada: :tada: :tada: LoReC has been accepted by NeurIPS 2026. See you in Sydney, Australia! BTW: Happy Mid-Autumn Festival!
 
 ## Table of Contents
 
